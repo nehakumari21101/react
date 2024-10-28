@@ -6,7 +6,8 @@ import About from "./components/About";
 import Contact from "./components/contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
+import Shimmer from "./components/Shimmer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const AppLayout = () => {
@@ -35,6 +36,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact/>,
+      },
+      {
+        path: "/shimmer",
+        element: <Shimmer/>,
       },
       {
         path: "/restaurants/:resId",

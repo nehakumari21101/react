@@ -5,19 +5,20 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
     return (
-      <div className="header">
+      <div className="flex justify-between bg-pink-100 shadow-lg mb-4 ">
         <div className="logo-container">
           <img
+          className="w-36"
             src={LOGO_URL}
             alt=""
           />
         </div>
-        <div className="nav-items">
-          <ul className="nav">
-            <li className="nav-item"><Link to="/">Home</Link></li>
-            <li className="nav-item"><Link to="/about">About us</Link></li>
-            <li className="nav-item"><Link to="/contact">Contact us</Link></li>
-            <li className="nav-item">Cart</li>
+        <div className="flex items-center ">
+          <ul className="flex p-4">
+            <li className="px-2"><Link to="/">Home</Link></li>
+            <li className="px-2"><Link to="/about">About us</Link></li>
+            <li className="px-2"><Link to="/contact">Contact us</Link></li>
+            <li className="px-2">Cart</li>
             <button className="login-btn" onClick={()=>{
               if(btnNameReact === "Login"){
                 setBtnNameReact("Logout")
