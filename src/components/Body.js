@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
-  const [searchText, setSearchText] = useState();
+  const [searchText, setSearchText] = useState("");
+
+  console.log("Body rendered",  listOfRestaurant);
 
   useEffect(() => {
     fetchData();
@@ -22,6 +24,12 @@ const Body = () => {
     setListOfRestaurant(
       json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
+
+    console.log(json.data);
+
+    // setListOfRestaurant(
+    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
   };
 
   if (listOfRestaurant.length === 0) {
@@ -32,7 +40,7 @@ const Body = () => {
       <div className="flex items-center justify-between ">
         <div className="search m-2 p-2">
           <input
-            className="border border-solid border-black"
+            className="border border-solid border-black p-1"
             type="text"
             value={searchText}
             onChange={(e) => {
