@@ -19,3 +19,16 @@
 - Error Hanling
 - HTTPS
 - Tree Shaking
+
+# 2 types Routing in web apps
+- Client Side Routing
+- Server Side Routing
+
+
+# Redux Toolkit
+ - Install @reduxjs/toolkit and react-redux
+ - Build our store
+ - Connect our store to our app
+ - Slice (cartsSlice)
+ - dispatch(action)
+ - Selector
