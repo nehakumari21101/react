@@ -1,10 +1,28 @@
-import React from 'react'
+import React from 'react';
+import {CDN_URL} from "../utils/constants"
 
 const ItemList = ({items}) =>{
     console.log(items)
     return(
         <div>
-            <h3>ItemList</h3>
+            {items.map((item)=>(
+               <div className='p-2 m-2 border-gray-200 border-b-2  flex justify-between'>
+                <div className='text-left mt-5 mb-5 w-9/12 '>
+                    <div className='py-2'>
+                        <h3 className='font-bold' style={{color:"#5d5656"}}>{item.card.info.name}</h3>
+                        <span className='font-bold'  style={{color:"#5d5656"}}>₹{" "} {item.card.info.price || item.card.info.defaultPrice} </span>
+                    </div>
+                    <p>{item.card.info.description}</p>
+                    </div>
+                    <div className='w-3/12'>
+                        
+                    <div className='absolute'>
+                    <button className='bg-white text-green-600 font-bold border  rounded-md px-5 py-1 w-28  mx-8'>Add</button>
+                    </div>
+                    <img src={CDN_URL + item.card.info.imageId}alt="" className=' rounded-lg ' />
+                    </div>
+               </div>
+            ))}
         </div>
     )
 }
