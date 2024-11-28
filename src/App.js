@@ -9,14 +9,19 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Footer from "./components/Footer";
 import Shimmer from "./components/Shimmer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
   return (
+    <Provider store={appStore}>
     <div className="app">
       <Header />
       <Outlet />
       {/* <Footer /> */}
     </div>
+    </Provider>
   );
 };
 
@@ -44,6 +49,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resId",
         element: <RestaurantMenu/>,
+      },
+      {
+        path: "/cart",
+        element: <Cart/>,
       },
     ],
     errorElement:<Error/>
