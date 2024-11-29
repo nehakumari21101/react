@@ -5,7 +5,8 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
-  const cartItems = useSelector((store) => store.cart.items)
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
     return (
       <div className="flex justify-between bg-pink-100 shadow-lg mb-4 ">
